@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Bloqueador de Anúncios",
+  "description": "Uma extensão simples para bloquear anúncios.",
+  "version": "1.0",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
